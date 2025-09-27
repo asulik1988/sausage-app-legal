@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sausage Calculator - Legal & Policies</title>
+    <meta name="description" content="Privacy Policy, Terms of Service, and Legal Information for the Sausage Calculator App">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌭</text></svg>">
+
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --success-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .last-updated {
+            margin-top: 15px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin: -30px auto 30px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            max-width: 900px;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: var(--bg-light);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .nav-tab:hover {
+            background: white;
+            border-color: var(--primary-color);
+        }
+
+        .nav-tab.active {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            border: 2px solid var(--warning-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .warning-box h3 {
+            color: var(--warning-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .danger-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border: 2px solid var(--danger-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .danger-box h3 {
+            color: var(--danger-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 {
+            color: var(--text-dark);
+            margin: 30px 0 20px;
+            font-size: 1.8em;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--text-dark);
+            margin: 25px 0 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        p, li {
+            margin: 15px 0;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        ul, ol {
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--text-dark);
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tab {
+                width: 100%;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .disclaimer-list {
+            background: var(--bg-light);
+            border-left: 4px solid var(--danger-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .disclaimer-list li {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌭 Sausage Calculator</h1>
+        <p>Legal Information & Policies</p>
+        <div class="last-updated">Last Updated: December 27, 2024</div>
+    </div>
+
+    <div class="nav-tabs">
+        <div class="nav-tab active" onclick="showSection('privacy')">Privacy Policy</div>
+        <div class="nav-tab" onclick="showSection('terms')">Terms of Service</div>
+        <div class="nav-tab" onclick="showSection('disclaimer')">Food Safety Disclaimer</div>
+        <div class="nav-tab" onclick="showSection('marketplace')">Marketplace Policy</div>
+    </div>
+
+    <div class="container">
+        <!-- Privacy Policy -->
+        <div id="privacy" class="section active">
+            <div class="card">
+                <h2>Privacy Policy</h2>
+
+                <p>The Sausage Calculator app ("we," "our," or "the app") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+
+                <h3>Information We Collect</h3>
+
+                <h4>1. Account Information</h4>
+                <ul>
+                    <li><strong>Email Address:</strong> Required for account creation and authentication</li>
+                    <li><strong>Authentication Tokens:</strong> Managed securely through Supabase for session management</li>
+                    <li><strong>Apple Sign-In Data:</strong> If you choose Apple Sign-In, we receive your identifier and optional email</li>
+                </ul>
+
+                <h4>2. User-Generated Content</h4>
+                <ul>
+                    <li><strong>Recipe Data:</strong> Any recipes you create, save, or share</li>
+                    <li><strong>Calculator Inputs:</strong> Ingredient measurements and ratios you enter</li>
+                    <li><strong>Recipe Ratings & Reviews:</strong> Your feedback on community recipes</li>
+                    <li><strong>Profile Information:</strong> Optional display name and preferences</li>
+                </ul>
+
+                <h4>3. Technical Information</h4>
+                <ul>
+                    <li><strong>Device Information:</strong> Device type, operating system version</li>
+                    <li><strong>App Performance Data:</strong> Crash reports, performance metrics via New Relic</li>
+                    <li><strong>Usage Analytics:</strong> Features used, session duration, navigation patterns</li>
+                </ul>
+
+                <h3>How We Use Your Information</h3>
+                <p>We use the collected information to:</p>
+                <ul>
+                    <li>Provide and maintain the app's functionality</li>
+                    <li>Enable recipe saving and sharing features</li>
+                    <li>Sync your data across devices</li>
+                    <li>Improve app performance and fix bugs</li>
+                    <li>Send important service notifications (not marketing)</li>
+                    <li>Respond to support requests</li>
+                </ul>
+
+                <h3>Data Storage & Security</h3>
+                <ul>
+                    <li>All data is stored securely using <strong>Supabase</strong> infrastructure</li>
+                    <li>Authentication tokens are encrypted and stored securely</li>
+                    <li>We use Row Level Security (RLS) to protect your data</li>
+                    <li>SSL/TLS encryption for all data transmission</li>
+                    <li>Regular security audits and updates</li>
+                </ul>
+
+                <h3>Data Sharing</h3>
+                <p>We <strong>DO NOT</strong>:</p>
+                <ul>
+                    <li>Sell your personal information to third parties</li>
+                    <li>Share your email with marketers</li>
+                    <li>Use your recipes without permission</li>
+                </ul>
+
+                <p>We <strong>MAY</strong> share information:</p>
+                <ul>
+                    <li>With service providers (Supabase, New Relic) for app functionality</li>
+                    <li>When required by law or legal process</li>
+                    <li>To protect our rights or user safety</li>
+                </ul>
+
+                <h3>Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Request data correction or deletion</li>
+                    <li>Export your recipes and data</li>
+                    <li>Delete your account at any time</li>
+                    <li>Opt-out of analytics collection</li>
+                </ul>
+
+                <h3>Children's Privacy</h3>
+                <p>The Sausage Calculator app is not intended for children under 13. We do not knowingly collect information from children under 13 years of age.</p>
+
+                <h3>Changes to Privacy Policy</h3>
+                <p>We may update this Privacy Policy periodically. Changes will be noted with an updated "Last Updated" date. Continued use of the app constitutes acceptance of changes.</p>
+            </div>
+        </div>
+
+        <!-- Terms of Service -->
+        <div id="terms" class="section">
+            <div class="card">
+                <h2>Terms of Service</h2>
+
+                <p>By using the Sausage Calculator app, you agree to these Terms of Service. Please read them carefully.</p>
+
+                <h3>1. Acceptance of Terms</h3>
+                <p>By downloading, installing, or using the Sausage Calculator app, you agree to be bound by these Terms of Service and our Privacy Policy.</p>
+
+                <h3>2. Use of the App</h3>
+                <h4>Permitted Use</h4>
+                <ul>
+                    <li>Personal, non-commercial use for sausage-making calculations</li>
+                    <li>Creating, saving, and sharing recipes</li>
+                    <li>Participating in the recipe marketplace community</li>
+                </ul>
+
+                <h4>Prohibited Use</h4>
+                <ul>
+                    <li>Commercial use without written permission</li>
+                    <li>Reverse engineering or copying the app</li>
+                    <li>Uploading harmful, offensive, or illegal content</li>
+                    <li>Attempting to breach security measures</li>
+                    <li>Impersonating others or providing false information</li>
+                    <li>Spamming or harassing other users</li>
+                </ul>
+
+                <h3>3. User Accounts</h3>
+                <ul>
+                    <li>You must provide accurate information</li>
+                    <li>You are responsible for maintaining account security</li>
+                    <li>You must notify us of any unauthorized access</li>
+                    <li>One account per person</li>
+                </ul>
+
+                <h3>4. User Content</h3>
+                <p>By submitting recipes or content, you:</p>
+                <ul>
+                    <li>Grant us a license to display your content in the app</li>
+                    <li>Confirm you own or have rights to the content</li>
+                    <li>Accept responsibility for your content's accuracy</li>
+                    <li>Agree not to post copyrighted recipes without permission</li>
+                </ul>
+
+                <h3>5. Recipe Marketplace</h3>
+                <ul>
+                    <li>Recipes shared are visible to all users</li>
+                    <li>You retain ownership of your original recipes</li>
+                    <li>We may remove inappropriate or dangerous content</li>
+                    <li>Recipe ratings and reviews must be honest and constructive</li>
+                </ul>
+
+                <h3>6. Intellectual Property</h3>
+                <ul>
+                    <li>The app's design, code, and features are our property</li>
+                    <li>You may not copy or redistribute the app</li>
+                    <li>User-generated recipes remain the property of their creators</li>
+                </ul>
+
+                <h3>7. Disclaimers</h3>
+                <ul>
+                    <li>The app is provided "AS IS" without warranties</li>
+                    <li>We don't guarantee recipe accuracy or safety</li>
+                    <li>Calculator results should be verified</li>
+                    <li>We're not responsible for recipe outcomes</li>
+                </ul>
+
+                <h3>8. Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the app.</p>
+
+                <h3>9. Termination</h3>
+                <p>We may terminate or suspend your account for violations of these terms. You may delete your account at any time through the app settings.</p>
+
+                <h3>10. Changes to Terms</h3>
+                <p>We reserve the right to modify these terms. Continued use after changes constitutes acceptance.</p>
+
+                <h3>11. Governing Law</h3>
+                <p>These Terms shall be governed by the laws of the United States, without regard to conflict of law provisions.</p>
+            </div>
+        </div>
+
+        <!-- Food Safety Disclaimer -->
+        <div id="disclaimer" class="section">
+            <div class="card">
+                <h2>Food Safety Disclaimer & Liability Waiver</h2>
+
+                <div class="danger-box">
+                    <h3>⚠️ CRITICAL FOOD SAFETY WARNING</h3>
+                    <p><strong>The Sausage Calculator app and all recipes within it are provided for informational purposes only. YOU ASSUME ALL RISKS associated with food preparation and consumption.</strong></p>
+                </div>
+
+                <h3>Important Safety Notices</h3>
+
+                <h4>1. No Guarantee of Safety</h4>
+                <p>We <strong>DO NOT</strong> guarantee that any recipe, calculation, or recommendation provided by this app is safe for consumption. Food safety depends on many factors including:</p>
+                <ul class="disclaimer-list">
+                    <li>Proper ingredient sourcing and quality</li>
+                    <li>Correct handling and sanitation</li>
+                    <li>Accurate temperature control</li>
+                    <li>Appropriate storage conditions</li>
+                    <li>Individual allergies and health conditions</li>
+                    <li>Proper use of curing salts and preservatives</li>
+                </ul>
+
+                <h4>2. Your Responsibility</h4>
+                <p>As the user, <strong>YOU are solely responsible for</strong>:</p>
+                <ul>
+                    <li>Verifying all recipes and calculations</li>
+                    <li>Following proper food safety guidelines</li>
+                    <li>Understanding and using curing salts correctly</li>
+                    <li>Maintaining proper temperatures during preparation</li>
+                    <li>Ensuring ingredients are fresh and safe</li>
+                    <li>Consulting professionals when uncertain</li>
+                </ul>
+
+                <h4>3. Specific Hazards</h4>
+
+                <div class="warning-box">
+                    <h3>🧂 Curing Salt Warning</h3>
+                    <ul>
+                        <li><strong>Prague Powder #1 and #2 contain sodium nitrite/nitrate</strong></li>
+                        <li>Incorrect use can cause serious illness or death</li>
+                        <li>Keep away from children</li>
+                        <li>Never exceed recommended amounts (0.25% typically)</li>
+                        <li>Do not confuse with regular salt</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h3>🌡️ Temperature Dangers</h3>
+                    <ul>
+                        <li>Ground meat must reach 160°F (71°C) for safety</li>
+                        <li>Smoking requires precise temperature control</li>
+                        <li>Cold smoking without proper knowledge is dangerous</li>
+                        <li>Improper temperatures can cause botulism or other serious illness</li>
+                    </ul>
+                </div>
+
+                <h4>4. Complete Liability Waiver</h4>
+                <p><strong>By using this app, you acknowledge and agree that:</strong></p>
+                <ul class="disclaimer-list">
+                    <li>We are NOT LIABLE for any illness, injury, or death resulting from recipes or calculations</li>
+                    <li>We are NOT LIABLE for foodborne illness from any source</li>
+                    <li>We are NOT LIABLE for allergic reactions or health complications</li>
+                    <li>We are NOT LIABLE for economic losses from failed recipes</li>
+                    <li>We DISCLAIM ALL WARRANTIES regarding recipe safety or accuracy</li>
+                    <li>You RELEASE US from all claims related to food preparation</li>
+                </ul>
+
+                <h4>5. Professional Consultation</h4>
+                <p>We strongly recommend:</p>
+                <ul>
+                    <li>Consulting USDA guidelines for meat handling</li>
+                    <li>Taking certified food safety courses</li>
+                    <li>Working with experienced sausage makers</li>
+                    <li>Using professional recipes for cured meats</li>
+                    <li>Getting proper equipment and thermometers</li>
+                </ul>
+
+                <h4>6. High-Risk Individuals</h4>
+                <p>The following should exercise extreme caution or avoid homemade sausages:</p>
+                <ul>
+                    <li>Pregnant women</li>
+                    <li>Young children</li>
+                    <li>Elderly individuals</li>
+                    <li>Immunocompromised persons</li>
+                    <li>Those with chronic illnesses</li>
+                </ul>
+
+                <div class="danger-box">
+                    <h3>🚨 FINAL WARNING</h3>
+                    <p><strong>IF YOU DO NOT ACCEPT FULL RESPONSIBILITY for your food safety and AGREE TO HOLD US HARMLESS from any consequences, DO NOT USE THIS APP.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketplace Policy -->
+        <div id="marketplace" class="section">
+            <div class="card">
+                <h2>Recipe Marketplace Policy</h2>
+
+                <p>The Recipe Marketplace allows users to share and discover sausage recipes. By participating, you agree to these policies.</p>
+
+                <h3>1. Content Guidelines</h3>
+
+                <h4>Acceptable Content</h4>
+                <ul>
+                    <li>Original sausage recipes you've created</li>
+                    <li>Traditional recipes (with attribution if known)</li>
+                    <li>Helpful tips and techniques</li>
+                    <li>Constructive reviews and ratings</li>
+                    <li>Recipe variations and improvements</li>
+                </ul>
+
+                <h4>Prohibited Content</h4>
+                <ul>
+                    <li>Deliberately dangerous or harmful recipes</li>
+                    <li>Copyrighted recipes without permission</li>
+                    <li>Offensive, discriminatory, or inappropriate content</li>
+                    <li>Spam or promotional material</li>
+                    <li>False or misleading information</li>
+                    <li>Personal attacks on other users</li>
+                </ul>
+
+                <h3>2. Recipe Ownership</h3>
+                <ul>
+                    <li>You retain ownership of your original recipes</li>
+                    <li>By sharing, you grant other users the right to make the recipe</li>
+                    <li>You grant us license to display your recipes in the app</li>
+                    <li>Users may fork/modify recipes with attribution</li>
+                </ul>
+
+                <h3>3. Safety Standards</h3>
+                <p>All shared recipes should:</p>
+                <ul>
+                    <li>Include clear safety warnings when applicable</li>
+                    <li>Specify if curing salts are required</li>
+                    <li>Note any special equipment needed</li>
+                    <li>Mention temperature requirements</li>
+                    <li>List potential allergens</li>
+                </ul>
+
+                <h3>4. Community Standards</h3>
+                <ul>
+                    <li>Be respectful and constructive in reviews</li>
+                    <li>Report unsafe or inappropriate content</li>
+                    <li>Give credit where due</li>
+                    <li>Share knowledge generously</li>
+                    <li>Help beginners learn safely</li>
+                </ul>
+
+                <h3>5. Moderation</h3>
+                <p>We reserve the right to:</p>
+                <ul>
+                    <li>Remove recipes that violate policies</li>
+                    <li>Ban users who repeatedly violate rules</li>
+                    <li>Edit recipes to add safety warnings</li>
+                    <li>Feature high-quality, safe recipes</li>
+                </ul>
+
+                <h3>6. Disclaimer for Marketplace Recipes</h3>
+                <div class="warning-box">
+                    <h3>⚠️ User-Generated Content Warning</h3>
+                    <p>Marketplace recipes are created by users, not verified by us. We do not test, validate, or guarantee the safety or accuracy of any user-submitted recipe. <strong>Use at your own risk.</strong></p>
+                </div>
+
+                <h3>7. Reporting Issues</h3>
+                <p>Please report:</p>
+                <ul>
+                    <li>Unsafe or dangerous recipes</li>
+                    <li>Copyright violations</li>
+                    <li>Inappropriate content</li>
+                    <li>Harassment or abuse</li>
+                    <li>Spam or commercial content</li>
+                </ul>
+
+                <h3>8. Commercial Use</h3>
+                <ul>
+                    <li>Recipes are shared for personal use</li>
+                    <li>Commercial use requires permission from recipe creator</li>
+                    <li>No selling of recipes through the platform</li>
+                    <li>Professional makers may share with attribution</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>For questions about these policies or to report issues:</p>
+            <p><strong>Email:</strong> <a href="mailto:support@warpedbbq.com">support@warpedbbq.com</a></p>
+            <p><strong>Support Page:</strong> <a href="https://sausage-app-support.pages.dev" target="_blank">sausage-app-support.pages.dev</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Sausage Calculator. All rights reserved.</p>
+        <p>Made with 🌭 for the sausage-making community</p>
+        <p><a href="https://warpedbbq.com">WarpedBBQ.com</a></p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update URL hash
+            window.location.hash = sectionId;
+        }
+
+        // Handle initial load with hash
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.textContent.toLowerCase().includes(hash)) {
+                        tab.classList.add('active');
+                    }
+                });
+                document.getElementById(hash).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
